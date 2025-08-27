@@ -19,7 +19,7 @@
             </div>
             <div class="nav-box flex flex-wrap items-center gap-[20px] max-sm:flex-col max-sm:gap-2">
                 <div class="love-box flex justify-center items-center px-[30px] gap-[10px] py-[10px] bg-[#41ff6b1a] rounded-[50px]">
-                    <h2 class="text-base text-black font-black">0</h2>
+                    <h2 id="heart-count" class="text-base text-black font-black">0</h2>
                     <img src="assets/heart.png" alt="" class="w-[23px] h-[23px]">
                 </div>
                 <div class="coin-box flex justify-center items-center px-[30px] gap-[10px] py-[10px] bg-[#41ff6b1a] rounded-[50px]">
@@ -50,7 +50,7 @@
                     <div class="p-[14px] rounded-2xl bg-[#FFE3E2]">
                         <img src="assets/emergency.png" alt="" class="w-[32px] h-[32px] ">
                     </div>
-                    <i class="fa-regular fa-heart w-[24px] h-[24px]"></i>
+                    <i id="heart-btn1" class="fa-regular fa-heart w-[24px] h-[24px]"></i>
                 </div>
                 <h2 class="text-[1.25rem] font-bold mt-[16px]">জাতীয় জরুরি সেবা</h2>
                 <p class="text-gray-600 mb-[24px]">National Emergency</p>
@@ -72,7 +72,7 @@
                     <div class="p-[14px] rounded-2xl bg-[#FFE3E2]">
                         <img src="assets/police.png" alt="" class="w-[32px] h-[32px] ">
                     </div>
-                    <i class="fa-regular fa-heart w-[24px] h-[24px]"></i>
+                    <i id="heart-btn2" class="fa-regular fa-heart w-[24px] h-[24px]"></i>
                 </div>
                 <h2 class="text-[1.25rem] font-bold mt-[16px]">পুলিশ</h2>
                 <p class="text-gray-600 mb-[24px]">Police</p>
@@ -94,7 +94,7 @@
                     <div class="p-[14px] rounded-2xl bg-[#FFE3E2]">
                         <img src="assets/fire-service.png" alt="" class="w-[32px] h-[32px] ">
                     </div>
-                    <i class="fa-regular fa-heart w-[24px] h-[24px]"></i>
+                    <i id="heart-btn3" class="fa-regular fa-heart w-[24px] h-[24px]"></i>
                 </div>
                 <h2 class="text-[1.25rem] font-bold mt-[16px]">ফায়ার সার্ভিস</h2>
                 <p class="text-gray-600 mb-[24px]">Fire Service</p>
@@ -140,7 +140,7 @@
                     <div class="p-[14px] rounded-2xl bg-[#FFE3E2]">
                         <img src="assets/ambulance.png" alt="" class="w-[32px] h-[32px] ">
                     </div>
-                    <i class="fa-regular fa-heart w-[24px] h-[24px]"></i>
+                    <i id="heart-btn4" class="fa-regular fa-heart w-[24px] h-[24px]"></i>
                 </div>
                 <h2 class="text-[1.25rem] font-bold mt-[16px]">অ্যাম্বুলেন্স</h2>
                 <p class="text-gray-600 mb-[24px]">Ambulance</p>
@@ -162,7 +162,7 @@
                     <div class="p-[14px] rounded-2xl bg-[#FFE3E2]">
                         <img src="assets/emergency.png" alt="" class="w-[32px] h-[32px] ">
                     </div>
-                    <i class="fa-regular fa-heart w-[24px] h-[24px]"></i>
+                    <i id="heart-btn5" class="fa-regular fa-heart w-[24px] h-[24px]"></i>
                 </div>
                 <h2 class="text-[1.25rem] font-bold mt-[16px]">নারী ও শিশু সহায়তা</h2>
                 <p class="text-gray-600 mb-[24px]">Women & Child Helpline</p>
@@ -184,7 +184,7 @@
                     <div class="p-[14px] rounded-2xl bg-[#FFE3E2]">
                         <img src="assets/emergency.png" alt="" class="w-[32px] h-[32px] ">
                     </div>
-                    <i class="fa-regular fa-heart w-[24px] h-[24px]"></i>
+                    <i id="heart-btn6" class="fa-regular fa-heart w-[24px] h-[24px]"></i>
                 </div>
                 <h2 class="text-[1.25rem] font-bold mt-[16px]">দুদক</h2>
                 <p class="text-gray-600 mb-[24px]">Anti-Corruption</p>
@@ -206,7 +206,7 @@
                     <div class="p-[14px] rounded-2xl bg-[#FFE3E2]">
                         <img src="assets/emergency.png" alt="" class="w-[32px] h-[32px] ">
                     </div>
-                    <i class="fa-regular fa-heart w-[24px] h-[24px]"></i>
+                    <i id="heart-btn7" class="fa-regular fa-heart w-[24px] h-[24px]"></i>
                 </div>
                 <h2 class="text-[1.25rem] font-bold mt-[16px]">বিদ্যুৎ বিভ্রাট</h2>
                 <p class="text-gray-600 mb-[24px]">Electricity Outage</p>
@@ -228,7 +228,7 @@
                     <div class="p-[14px] rounded-2xl bg-[#FFE3E2]">
                         <img src="assets/brac.png" alt="" class="w-[32px] h-[32px] ">
                     </div>
-                    <i class="fa-regular fa-heart w-[24px] h-[24px]"></i>
+                    <i id="heart-btn8" class="fa-regular fa-heart w-[24px] h-[24px]"></i>
                 </div>
                 <h2 class="text-[1.25rem] font-bold mt-[16px]">ব্র্যাক</h2>
                 <p class="text-gray-600 mb-[24px]">Brac</p>
@@ -250,7 +250,7 @@
                     <div class="p-[14px] rounded-2xl bg-[#FFE3E2]">
                         <img src="assets/Bangladesh-Railway.png" alt="" class="w-[32px] h-[32px] ">
                     </div>
-                    <i class="fa-regular fa-heart w-[24px] h-[24px]"></i>
+                    <i id="heart-btn9" class="fa-regular fa-heart w-[24px] h-[24px]"></i>
                 </div>
                 <h2 class="text-[1.25rem] font-bold mt-[16px]">বাংলাদেশ রেলওয়ে</h2>
                 <p class="text-gray-600 mb-[24px]">Bangladesh Railway</p>
@@ -269,5 +269,7 @@
             </div>
         </div>
     </section>
+
+    <script src="js/index.js"></script>
 </body>
 </html>
