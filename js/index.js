@@ -5,6 +5,12 @@ function getCount(id){
     return availableCountNumber;
 }
 
+//function to get inner Text
+function getInnerText(id){
+    const innerText = document.getElementById(id).innerText;
+    return innerText;
+}
+
 // function to set inner text 
 function setInnerText(id, val){
     document.getElementById(id).innerText = val;
@@ -37,15 +43,63 @@ updateHeartCount('heart-btn8', 'heart-count');
 updateHeartCount('heart-btn9', 'heart-count');
 
 
-//functionalty of call button:
-document.getElementById('call-btn1').addEventListener('click', function(){
-    const availableCoin = getCount('coin-count');
-    if(availableCoin < 20)
-    {
-        alert('You need minimum 20 coins to call');
-        return;
-    }
-    const newCoinCount = availableCoin - 20;
-    getAlert('service1', 'phone1');
-    setInnerText('coin-count', newCoinCount);
+// function of functionality of call button:
+const callData = [];
+
+function callButtonFunctionality(callBtnId, coinId, serviceId, phoneId){
+    document.getElementById(callBtnId).addEventListener('click', function(){
+        const availableCoin = getCount(coinId);
+        if(availableCoin < 20)
+        {
+            alert('You need minimum 20 coins to call');
+            return;
+        }
+        const newCoinCount = availableCoin - 20;
+        getAlert(serviceId, phoneId);
+        setInnerText('coin-count', newCoinCount);
+        const data = {
+            name: getInnerText(serviceId) ,
+            phone: getInnerText(phoneId),
+            date: new Date().toLocaleTimeString()
+        }
+        callData.push(data);
+
+        const parentNode = document.getElementById('history-container');
+        parentNode.innerText = '';
+        for(const elData of callData)
+        {
+            const newBox = document.createElement('div');
+            newBox.innerHTML = `
+                <div class="history-box flex justify-between items-center bg-gray-50 px-[10px] py-[16px] rounded-[8px] mb-[8px]">
+                    <div>
+                        <h2 class="text-[0.75rem] font-semibold">${elData.name}</h2>
+                        <p class="text-[0.70rem] text-gray-500">${elData.phone}</p>
+                    </div>
+                    <div>
+                        <p class="text-[0.80rem] text-gray-500">${elData.date}</p>
+                    </div>
+                </div>
+            `
+            parentNode.appendChild(newBox);
+        }
+    })
+}
+
+//functionality of call buttons
+callButtonFunctionality('call-btn1', 'coin-count', 'service1', 'phone1');
+callButtonFunctionality('call-btn2', 'coin-count', 'service2', 'phone2');
+callButtonFunctionality('call-btn3', 'coin-count', 'service3', 'phone3');
+callButtonFunctionality('call-btn4', 'coin-count', 'service4', 'phone4');
+callButtonFunctionality('call-btn5', 'coin-count', 'service5', 'phone5');
+callButtonFunctionality('call-btn6', 'coin-count', 'service6', 'phone6');
+callButtonFunctionality('call-btn7', 'coin-count', 'service7', 'phone7');
+callButtonFunctionality('call-btn8', 'coin-count', 'service8', 'phone8');
+callButtonFunctionality('call-btn9', 'coin-count', 'service9', 'phone9');
+
+//funcionality of clear button 
+
+document.getElementById('clear-btn').addEventListener('click', function(){
+    const boxes = document.getElementById('history-container');
+    boxes.innerHTML = '';
+    callData.length = 0;
 })
